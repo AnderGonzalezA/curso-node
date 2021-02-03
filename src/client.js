@@ -5,4 +5,8 @@ socket.connect(8000, "localhost");
 
 socket.write("Hola?");
 
-socket.on("data", (data) => console.log(d.toString()));
+socket.on("error", (err) => {
+  throw err;
+});
+
+socket.on("data", (data) => console.log(data.toString()));

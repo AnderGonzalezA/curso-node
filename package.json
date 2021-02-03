@@ -26,11 +26,14 @@
     "yarn": ">=1.3.2"
   },
   "scripts": {
-    "start": "node --require 'babel-register' src/index.js",
-    "client": "node --require 'babel-register' src/client.js",
+    "start": "node --require @babel/register src/index.js",
+    "client": "node --require @babel/register src/client.js",
     "lint": "standard 'src/**/*.js'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/register": "^7.12.13"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-preset-env": "^1.6.1",
