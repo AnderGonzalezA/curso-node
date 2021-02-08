@@ -10,16 +10,13 @@ import mongoose from 'mongoose'
 const host = 'mongodb://127.0.0.1:27017/films'
 
 mongoose.set('debug', true)
-mongoose.set("useNewUrlParser", true);
-mongoose.set("useUnifiedTopology", true);
 mongoose.Promise = global.Promise
 
-
+mongoose.set("useNewUrlParser", true);
 
 const connection = mongoose.createConnection(
-  host,
-  { poolSize: 200 }
-)
+  host
+);
 
 connection.on('error', err => {
   console.log(' ⚑ Mongo Error'.bold.red, err)
