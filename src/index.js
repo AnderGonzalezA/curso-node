@@ -17,7 +17,7 @@ const server = http.createServer((request, response) => {
       contentType = 'text/css'
       break
   }
-  response.writeHead(200, { 'Content-Type': `${contentType}; charset=UTF-8` })
+  response.writeHead(200, { 'Content-Type': contentType, charset: 'UTF-8' })
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
