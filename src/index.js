@@ -4,16 +4,19 @@ import http from 'http'
 const file = `./src/index.html`
 
 const server = http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/html; charset=UTF-8' })
+  //response.writeHead(200, { 'Content-Type': 'text/html; charset=UTF-8' })
+  response.writeHead(200, { "Content-Type": "application/json; charset=UTF-8" });
 
-  fs.readFile(file, (err, content) => {
+  /*fs.readFile(file, (err, content) => {
     if (err) {
       return console.log(err)
     }
 
     response.write(content)
     return response.end()
-  })
+  })*/
+  response.write(JSON.stringify({ key: "valor" }));
+  response.end();
 })
 
 server.listen(8000, 'localhost', err => {
