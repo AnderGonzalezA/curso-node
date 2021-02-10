@@ -17,8 +17,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-  res.render('home')
-  // res.render('homeVars', { title: 'Open Webinars!', message: 'Curso NodeJS!' })
+  //res.render('home')
+  res.render('homeVars', { title: 'Open Webinars!', message: 'Curso NodeJS!' })
 })
 
 app.listen('9000', () => {
