@@ -22,12 +22,14 @@ app.get('/', (req, res, next) => {
     title: 'Open Webinars',
     message: 'Curso NodeJS de OpenWebinars!'
   })
+  res.end()
 })
 
 app.get('/temario', (req, res, next) => {
   res.render('temario', {
     title: 'Open Webinars'
   })
+  res.end()
 })
 
 app.listen('9000', () => {
