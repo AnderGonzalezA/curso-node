@@ -8,7 +8,7 @@ import router from './router'
 let _server
 
 const server = {
-  start () {
+  start: function() {
     const app = express()
 
     app.disable('x-powered-by')
@@ -47,13 +47,13 @@ const server = {
       }
     })
   },
-  close () {
+  close: function() {
     _server.close()
   }
 }
 
 export default server
 
-if (!module.parent) {
+if (module.children) {
   server.start()
 }
